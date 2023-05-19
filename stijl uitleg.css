@@ -1,0 +1,44 @@
+
+
+
+
+body {
+		 color : blue ;
+		 background-image : url(img/kulogo.png) ;
+		
+	
+
+
+
+}
+
+img {
+ width : 100 ;
+ margin : auto ;
+ display : block ;
+}
+
+
+h1 {
+	 background : #00bfff ;
+	 color : yellow;
+
+
+}
+
+
+
+h2 {
+
+	 background : #00008b ;
+	 color : yellow;
+
+}
+
+
+h5 {
+
+	 background : #00008b ;
+	 color : yellow;
+
+}

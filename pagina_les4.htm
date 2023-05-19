@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<link rel=stylesheet type= "text/css"  href="stijl.css">
+
+<html>
+<head>
+<title>Untitled</title>
+</head>
+
+<H1>
+Code Iot:
+</H1>
+<H2>
+Uitleg:
+</H2>
+
+<body>
+
+Door middel van deze code kunnen we de temperatuur vastleggen door op de knop te drukken. Deze wordt verstuurd wanneer het nacht wordt. 
+Dat is wanneer de lichtsensor een waarde minder dan vijf detecteert.
+
+</body>
+
+
+<body>
+
+<pre>
+#include <Dramco-UNO.h>
+
+LoraParam DevEUI = "70B3D57ED005D90C" ;
+LoraParam AppKey = "44930B370A5711296CDE22F5450587E5" ; 
+
+void setup() {
+       DramcoUno.begin (DevEUI,AppKey );
+       pinMode (10, OUTPUT);
+       pinMode (4, INPUT_PULLUP);
+       
+      
+
+
+}
+
+void loop() {
+       if (digitalRead(4) == 0) {
+               digitalWrite (10,1);
+               DramcoUno.addTemperature();
+               
+       } else {
+               digitalWrite (10,0);
+       }
+       if(DramcoUno.readLuminosity()<5)
+       {
+         DramcoUno.send();
+         }
+       
+}
+
+
+</pre>
+
+</body>
+</html>
